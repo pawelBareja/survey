@@ -7,15 +7,15 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 
-const Question2 = ({ next, prev, handleChange, question2 }) => {
+const Question5 = ({ next, prev, handleChange, question5 }) => {
   return (
     <>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item>
-          <Box m={2} justifyContent="center">
-            <FormLabel component="legend">Treść DRUGIEGO pytania..</FormLabel>
+          <Box m={2}>
+            <FormLabel component="legend">Treść PIĄTEGO pytania..</FormLabel>
           </Box>
-          <RadioGroup value={question2} onChange={handleChange("question2")}>
+          <RadioGroup value={question5} onChange={handleChange("question5")}>
             <FormControlLabel value="1" control={<Radio />} label="a" />
             <FormControlLabel value="2" control={<Radio />} label="b" />
             <FormControlLabel value="3" control={<Radio />} label="c" />
@@ -26,7 +26,7 @@ const Question2 = ({ next, prev, handleChange, question2 }) => {
           <Box m={12} align="center">
             <ButtonNav
               color={"primary"}
-              buttonText={"następne pytanie"}
+              buttonText={"Zobacz Wyniki"}
               handleClick={next}
             />
             <ButtonNav
@@ -41,4 +41,4 @@ const Question2 = ({ next, prev, handleChange, question2 }) => {
   );
 };
 
-export default Question2;
+export default Question5;
