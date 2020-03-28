@@ -1,27 +1,44 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import ButtonNav from "../Layout/ButtonNav";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormLabel from "@material-ui/core/FormLabel";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 
-const styleButton = {
-    margin: '10px'
-}
+const Question3 = ({ next, prev, handleChange, question3 }) => {
+  return (
+    <>
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Grid item>
+          <Box m={2}>
+            <FormLabel component="legend">Treść TRZECIEGO pytania..</FormLabel>
+          </Box>
+          <RadioGroup value={question3} onChange={handleChange("question3")}>
+            <FormControlLabel value="1" control={<Radio />} label="a" />
+            <FormControlLabel value="2" control={<Radio />} label="b" />
+            <FormControlLabel value="3" control={<Radio />} label="c" />
+          </RadioGroup>
+        </Grid>
 
-const Question3 = (props) => {
-
-    const { next, prev, color, handleChange } = props
-
-    return (
-        <>
-            <TextField
-                label="What is your favorite color?"
-                value={color}
-                onChange={handleChange('color')}
-            /><br />
-
-            <Button variant="contained" color="primary" onClick={next} style={styleButton}> next question </Button>
-            <Button variant="contained" color="secondary" onClick={prev} style={styleButton}> previous question </Button>
-        </>
-    );
+        <Grid item md={12}>
+          <Box m={12} align="center">
+            <ButtonNav
+              color={"primary"}
+              buttonText={"następne pytanie"}
+              handleClick={next}
+            />
+            <ButtonNav
+              color={"secondary"}
+              buttonText={"poprzednie pytanie"}
+              handleClick={prev}
+            />
+          </Box>
+        </Grid>
+      </Grid>
+    </>
+  );
 };
 
 export default Question3;
