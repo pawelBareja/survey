@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PersonalData from "./PersonalData";
+import WelcomePage from "./WelcomePage";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
 import Question3 from "./Question3";
@@ -11,17 +11,21 @@ import Summary from "./Summary";
 // #03a9f4 ciemny niebieski
 // #8bd3f4 jasny niebieski
 
-class Survey extends Component {
+class Quiz2 extends Component {
   state = {
     level: 0,
-    name: "",
-    email: "",
-    phone: "",
+    paymentDone: false,
     question1: "",
     question2: "",
     question3: "",
     question4: "",
     question5: ""
+  };
+
+  handlePayment = e => {
+    this.setState({
+      paymentDone: true
+    });
   };
 
   prevLevel = () => {
@@ -46,9 +50,7 @@ class Survey extends Component {
   render() {
     const {
       level,
-      name,
-      email,
-      phone,
+      paymentDone,
       question1,
       question2,
       question3,
@@ -60,14 +62,11 @@ class Survey extends Component {
       case 0:
         return (
           <>
-            <PersonalData
+            <WelcomePage
               level={level}
-              name={name}
-              email={email}
-              phone={phone}
+              paymentDone={paymentDone}
+              handlePayment={this.handlePayment}
               next={this.nextLevel}
-              prev={this.prevLevel}
-              handleChange={this.handleChange}
             />
           </>
         );
@@ -139,9 +138,6 @@ class Survey extends Component {
             <Summary
               prev={this.prevLevel}
               level={level}
-              name={name}
-              email={email}
-              phone={phone}
               question1={question1}
               question2={question2}
               question3={question3}
@@ -154,4 +150,4 @@ class Survey extends Component {
   }
 }
 
-export default Survey;
+export default Quiz2;

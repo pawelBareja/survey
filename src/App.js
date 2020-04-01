@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-import Survey from "./Components/Survey";
+import Main from "./Layout/Main";
 import Header from "./Layout/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -52,7 +52,7 @@ function App() {
         >
           <CssBaseline />
           <Header />
-          <Survey />
+          <Main />
         </Box>
       </Container>
     </MuiThemeProvider>

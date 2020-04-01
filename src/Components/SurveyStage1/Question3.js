@@ -1,18 +1,22 @@
 import React from "react";
-import ButtonNav from "../Layout/ButtonNav";
+import ButtonNav from "../../Layout/ButtonNav";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import { Typography } from "@material-ui/core";
 
-const Question3 = ({ next, prev, handleChange, question3 }) => {
+const Question3 = ({ level, next, prev, handleChange, question3 }) => {
   return (
     <>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item>
           <Box m={2}>
+            <Typography variant="body" component="h3" align="center">
+              Pytanie {level + 1} / 6
+            </Typography>
             <FormLabel component="legend">Treść TRZECIEGO pytania..</FormLabel>
           </Box>
           <RadioGroup value={question3} onChange={handleChange("question3")}>
@@ -28,6 +32,7 @@ const Question3 = ({ next, prev, handleChange, question3 }) => {
               color={"primary"}
               buttonText={"następne pytanie"}
               handleClick={next}
+              disabled={question3 === ""}
             />
             <ButtonNav
               color={"secondary"}

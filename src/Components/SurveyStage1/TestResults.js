@@ -3,7 +3,8 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import Link from "@material-ui/core/Link";
+// import Link from "@material-ui/core/Link";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const TestResults = ({ result }) => {
   return (
@@ -18,9 +19,9 @@ const TestResults = ({ result }) => {
             Sprawdź polecane kreacje na naszej stronie
           </Typography>
           <Button variant="contained" color="primary">
-            <Link href="#" color="textPrimary">
+            <a href="#" color="textPrimary">
               Przejdź do strony
-            </Link>
+            </a>
           </Button>
         </div>
       ) : (
@@ -29,9 +30,9 @@ const TestResults = ({ result }) => {
             Wypełnij rozszerony formularz
           </Typography>
           <Button variant="contained" color="primary">
-            <Link href="#" color="textPrimary">
-              Przejdź do wypełnienia formularza
-            </Link>
+            {/* <Link href="#" color="textPrimary"> */}
+
+            <Link to="/quiz-glowny">Przejdź do wypełnienia formularza</Link>
           </Button>
         </div>
       )}
